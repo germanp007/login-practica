@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const registerCollection = 'session';
+const registerCollection = 'register';
 
 const registerSchema = new mongoose.Schema({
     first_name:{

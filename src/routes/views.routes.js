@@ -17,7 +17,8 @@ router.get('/register', (req,res)=>{
 })
 
 router.get('/profile', (req,res)=>{
-    res.render('profile')
+    const userEmail = req.session.first_name;
+    res.render('profile', {userEmail})
 })
 
 

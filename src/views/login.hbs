@@ -1,1 +1,14 @@
 <h1>login page</h1>
+
+<p style="color: green;">{{message}}</p>
+<p style="color: red;">{{error}}</p>
+<form method="post" action="/api/sessions/login">
+  
+    <input type="text" name="email" placeholder="email">
+    <br>
+    <br>
+    <input type="text" name="password" placeholder="password">
+    <br>
+    <br>
+    <button >log in</button>
+</form>

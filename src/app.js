@@ -6,6 +6,7 @@ import { __dirname } from "./utils.js";
 import {engine} from "express-handlebars";
 import path from 'path'
 import { viewsRouter } from "./routes/views.routes.js";
+import { routerSessions } from "./routes/sessions.routes.js";
 
 //import { productsModel } from "./models/product.model.js";
 
@@ -13,7 +14,11 @@ const PORT = 3000;
 const app = express()
 
 app.listen(PORT, ()=> console.log('Servidor OK!'));
+
+// midlewares
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 conectionDB();
 
 //Configurando handlebars
@@ -44,10 +49,6 @@ app.use(session({
     saveUninitialized: true // para mantener actualizada las sessions q se van guardando
 }))
 
-
-
 // routes
-
-// app.use('/login', routerLogin)
-// app.use('/profile', routerProfile)
-app.use(viewsRouter)
+app.use(viewsRouter);
+app.use('/api/sessions', routerSessions)

@@ -17,7 +17,10 @@ const registerSchema = new mongoose.Schema({
         require:true,
         unique: true
     },
-    rol: enum['admin','user']
+    rol: {
+        type: String,
+        enum: ['admin','user']
+    }
 })
 
 export const registerModel = mongoose.model(registerCollection,registerSchema)

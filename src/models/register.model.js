@@ -7,6 +7,10 @@ const registerSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    last_name:{
+        type:String,
+        require: true
+    },
     email:{
         type: String,
         require: true,

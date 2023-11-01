@@ -5,25 +5,26 @@ const registerCollection = 'register';
 const registerSchema = new mongoose.Schema({
     first_name:{
         type: String,
-        require: true
+        required: true
     },
     last_name:{
         type:String,
-        require: true
+        required: true
     },
     email:{
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     password: {
         type:String,
-        require:true,
+        required:true,
         unique: true
     },
     rol: {
         type: String,
-        enum: ['admin','user']
+        enum: ['admin','user'],
+        default: 'user'
     }
 })
 

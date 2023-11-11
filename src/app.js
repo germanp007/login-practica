@@ -16,8 +16,12 @@ const app = express()
 app.listen(PORT, ()=> console.log('Servidor OK!'));
 
 // midlewares
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.json()) // Se utiliza para leer lo cuerpos de solicitud cuando estan en formato JSON, 
+//Cuando una solicitud POST o PUT se realiza con datos en formato JSON, este middleware 
+//convierte esos datos en un objeto JavaScript y lo adjunta al objeto request de Express. 
+app.use(express.urlencoded({extended: true})) //Este middleware se utiliza para analizar los datos del cuerpo 
+//de la solicitud cuando están en formato de formulario URL-encoded. 
+//Este formato es comúnmente utilizado en formularios HTML. 
 
 conectionDB();
 

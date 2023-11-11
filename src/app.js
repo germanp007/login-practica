@@ -25,7 +25,7 @@ app.use(express.urlencoded({extended: true})) //Este middleware se utiliza para 
 
 conectionDB();
 
-//Configurando handlebars
+//Configurando handlebars, utilizado como motor de plantillas para el front
 app.engine(
     ".hbs",
     engine({
